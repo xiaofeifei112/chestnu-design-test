@@ -50,5 +50,16 @@ $ docs-dist
 ```
 
 
+```bash
+
+// 下载组件
+yarn add chestnut-design
+npm i chestnut-design
+
+```
+
+
+
+
 
 
