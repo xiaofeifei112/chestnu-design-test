@@ -1,0 +1,136 @@
+@import "animate.scss";
+
+$red: #F75A5A;
+$red_1: #F16272;
+$red-light: #FDE5E5;
+$click-blue: #4173FF;
+$click-blue2: #6991CD;
+$click-blue3:#4378BE;
+$click-green: #73d13d;
+$blue-lite: #D8E7F9;
+$blue-dark: #235AF2;
+$gray: #8c8c8c;
+$gray_1:#5E6576;
+$gray-bg: #f0f1f3;
+$gray-bg1: #F7F8F9;
+$gray-bg2: #FAFAFA;
+$gray-box-bg: #F9F9F9;
+$img-path: '';
+$normal-blue: #ECF1FF;
+$special-green: rgba(240,178,118,0.15);
+$urgent-red: rgba(241,98,114,0.15);
+$txt-black: #272E42;
+$txt-gray: #D4D7DE;
+$black_1:#1F2B55;
+$black_2:#383838;
+$grey_tips:#B9BCC5;
+$border_grey:#EEEEEE;
+$border_grey2:#EEF0F4;
+$tip_orange: #FF9A23;
+$tip_orange1: #FFA130;
+$bg_color2:#F4FAFF;
+$main_bg_green: #5BC9A4;
+$wchat_color:#07C160;
+$def_color_green:#EEF9F5;
+$def_bg_gray1:#131111;
+
+%font-20px {
+  font-family: "PingFang SC";
+  font-weight: 400;
+  font-size: 20px;
+}
+%iconGmV3 {
+  background: url(#{$img-path}/images/iconV3_1/icon-gm-v3.png) no-repeat;
+  background-size: 705px 239px;
+}
+%iconMtV3 {
+  background: url(#{$img-path}/images/iconV3_1/icon-mt-v3.png) no-repeat;
+  background-size: 237px 259px;
+}
+%iconCwV3 {
+  background: url(#{$img-path}/images/iconV3_1/icon-cwIcon-v3.png) no-repeat;
+  background-size: 148px 221px;
+}
+
+%iconGiV3 {
+  background: url(#{$img-path}/images/iconV3_1/icon-gi-v3.png) no-repeat;
+  background-size: 673px 446px;
+}
+
+%positionCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%textHide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+%flex_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex_between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex_align_center{
+  display: flex;
+  align-items: center;
+}
+
+%hideScrollbar{
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin fontSize($f, $w:400) {
+  font-family: "PingFangSC-Regular,PingFang SC";
+  font-size: $f+px;
+  font-weight: $w;
+}
+
+@mixin fontSizeMedium($f, $w:400) {
+  font-family: "PingFangSC-Medium,PingFang SC;";
+  font-size: $f+px;
+  font-weight: $w;
+}
+
+@mixin iconfontSize($f) {
+  font-size: $f+px;
+  line-height: $f+px;
+}
+
+@mixin widthHight($w, $h) {
+  width: $w+px;
+  height: $h+px;
+}
+
+//文字几行超出省略
+@mixin multiTextHide($num) {
+  display: -webkit-box;
+  display: -moz-box;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: $num;
+  -moz-line-clamp: $num;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin radiusBorder($radius, $color: $txt-gray) {
+  border: 1px solid $color;
+  border-radius: $radius+px;
+}

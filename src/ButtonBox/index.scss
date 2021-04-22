@@ -1,0 +1,255 @@
+
+.ButtonBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: all .5s;
+  cursor: pointer;
+  user-select: none;
+
+  .refresh_icon {
+    font-size: 14px;
+    color: $gray_1;
+  }
+
+  // 自适应宽度
+  &.auto-w {
+    width: max-content;
+    padding: 0 14px;
+  }
+
+  &.middleBtn {
+    width: 68px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &.middleBtn2 {
+    width: 84px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &.miniBtn {
+    width: 48px;
+    height: 24px;
+    font-size: 13px;
+  }
+
+  &.txtBtn {
+    width: auto;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  &.labelBtn {
+    width: auto;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 0 7px;
+    color: #B9BCC5;
+    border: 1px solid #D4D7DE;
+
+    &:hover {
+      color: #5E6576;
+    }
+  }
+
+  &.downloadBtn {
+    width: 108px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D4D7DE;
+    &:hover {
+      border: 1px solid #5E6576;
+    }
+    em {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      //@extend %iconWmV3;
+      background-position: -101px -21px;
+    }
+  }
+
+  &.uploadBtn {
+    width: 108px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #272E42;
+    margin: 0 auto;
+    border: 1px solid #D4D7DE;
+    &:hover {
+      border: 1px solid #5E6576;
+    }
+    em {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background: url(#{$img-path}/images/icon/icon_upload.png) 0 0/100% no-repeat;
+    }
+  }
+
+  &.txtBlue {
+    color: $click-blue2;
+
+    &:hover {
+      color: #4173FF;
+      text-decoration: underline;
+    }
+  }
+
+  &.txtdarkBlue {
+    color: #4173FF;
+
+    &:hover {
+      color: #235AF2;
+    }
+  }
+
+  &.cancel {
+    border: 1px solid transparent;
+    color: #5E6576;
+
+    &:hover {
+      border: 1px solid #F0F1F3;
+      background: #F0F1F3;
+      color: #485767;
+    }
+  }
+
+  &.confirm,
+  &.edit,
+  &.esc {
+    background: #4173FF;
+    border: 1px solid #4173FF;
+    color: #fff;
+
+    &:hover {
+      background: #235AF2;
+    }
+  }
+
+  &.green {
+    background: #5BC9A4;
+    border: 1px solid #5BC9A4;
+    color: #fff;
+
+    &:hover {
+      border: 1px solid #26BD8B;
+      background: #26BD8B;
+    }
+  }
+
+  &.black {
+    background: #5E6576;
+    border: 1px solid #5E6576;
+    color: #fff;
+
+    &:hover {
+      border: 1px solid #434A5F;
+      background: #434A5F;
+    }
+  }
+
+  &.disable {
+    background: #D4D7DE;
+    border: 1px solid #D4D7DE;
+    color: #fff;
+    cursor: not-allowed;
+  }
+
+  &.disabled {
+    background: #F0F1F3;
+    border: 1px solid #D4D7DE;
+    color: #B9BCC5;
+    cursor: not-allowed;
+  }
+
+  &.white {
+    background: #fff;
+    border: 1px solid #4173FF;
+    color: #4173FF;
+
+    &:hover {
+      background: #235AF2;
+      color: #fff;
+    }
+  }
+
+  &.noBg {
+    border: 1px solid #4173FF;
+    color: #4173FF;
+
+    &:hover {
+      background: #235AF2;
+      color: #fff;
+    }
+  }
+
+  &.delete {
+    background: #F16272;
+    border: 1px solid #F16272;
+    color: #fff;
+
+    &:hover {
+      background: #DA4152;
+      border: 1px solid #DA4152;
+    }
+  }
+
+  &.gray {
+    background: #fff;
+    border: 1px solid #d4d7de;
+    color: #5E6576;
+
+    &:hover {
+      border: 1px solid #5E6576;
+    }
+  }
+
+  &.line {
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    color: #fff;
+
+    &:hover {
+      background: #fff;
+      color: #235AF2;
+    }
+  }
+
+  &.blueOutline {
+    background: #fff;
+    border: 1px solid #d4d7de;
+    color: #5E6576;
+
+    &:hover {
+      border: 1px solid #4173FF;
+    }
+  }
+
+  &.blue_txt {
+    background: #F7F8F9;
+    color: #4173FF;
+  }
+
+  &.gray-dashed {
+    background: #fff;
+    border: 1px dashed $txt-gray;
+    color: $gray_1;
+    &:hover {
+      border: 1px solid $gray_1;
+    }
+  }
+}
