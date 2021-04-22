@@ -8,6 +8,7 @@ export default defineConfig({
   publicPath: './',
   "sass": {
     prependData: "@import './src/styles/public.scss';"
-  }
+  },
+  base: "/chestnu-design-test/docs-dist/"
   // more config: https://d.umijs.org/config
 });
