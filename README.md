@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+网站地址： [栗子组件](https://xiaofeifei112.github.io/chestnu-design-test/docs-dist/)
+
 Install dependencies,
 
 ```bash
