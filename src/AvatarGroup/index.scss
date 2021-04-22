@@ -1,0 +1,200 @@
+@import "./src/styles/public.scss";
+
+.QymomentsList-content {
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-start;
+  .left-box {
+    // width: 60px;
+    max-width: 40px;
+    height: 40px;
+    display: flex;
+    box-sizing: border-box;
+    margin-right: 16px;
+    overflow: hidden;
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .avatar-box-1 {
+      position: relative;
+      line-height: 40px;
+      overflow: hidden;
+
+      .video-play-img {
+        width: 24px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    .avatar-box-2 {
+      width: 50%;
+      height: 100%;
+      margin-right: 2px;
+      display: inline-block;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .avatar-box-3 {
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      margin-right: 2px;
+    }
+    .two-imgbox {
+      display: inline-block;
+      width: 50%;
+      box-sizing: border-box;
+      .top-img,
+      .bottom-img {
+        margin-top: -2px;
+        width: 100%;
+        height: 49%;
+      }
+      .bottom-img {
+        margin-top: 2px;
+      }
+    }
+    .four-imgbox {
+      display: inline-block;
+      box-sizing: border-box;
+      margin-right: 2px;
+      &:last-child {
+        margin-right: 0;
+      }
+      .top-img,
+      .bottom-img {
+        width: 100%;
+        height: 50%;
+      }
+      .bottom-img {
+        margin-top: 2px;
+      }
+    }
+  }
+  .right-box {
+    @include fontSize(14, 400);
+    color: $txt-black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+  }
+  .right-box1 {
+    @include multiTextHide(2);
+  }
+  .right-box2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+    flex-direction: column;
+    .title {
+      width: 237px;
+      @extend %textHide;
+      @include fontSize(14, 400);
+    }
+    .desc {
+      position: relative;
+      margin-top: 4px;
+      .link-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .desc-text {
+        @include fontSize(14, 400);
+        color: $grey_tips;
+        @extend %textHide;
+        vertical-align: middle;
+        padding-left: 28px;
+        max-width: 297px;
+      }
+      .desc-text-hide {
+        @include multiTextHide(2);
+      }
+    }
+  }
+  .right-box3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+    flex-direction: column;
+    .title {
+      max-width: 297px;
+      @include fontSize(14, 400);
+      @include multiTextHide(1);
+    }
+    .desc {
+      position: relative;
+      .link-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .desc-text1 {
+        position: relative;
+        color: $grey_tips;
+        @include multiTextHide(1);
+        vertical-align: middle;
+        padding-left: 28px;
+        max-width: 297px;
+        padding-right: 98px;
+        @include fontSize(14, 400);
+      }
+      .desc-text2 {
+        position: absolute;
+        right: 0;
+        top: 1px;
+        margin-right: 0;
+        @include fontSize(12, 400);
+        color: $wchat_color;
+        background: $def_color_green;
+        border-radius: 4px;
+        height: 20px;
+        line-height: 20px;
+        max-width: 96px;
+        padding: 0 4px;
+      }
+    }
+  }
+  .right-box4 {
+    @include multiTextHide(2);
+    .desc {
+      position: relative;
+      color: $grey_tips;
+      @include fontSize(14, 400);
+      padding-left: 28px;
+      .link-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .desc-text1 {
+        @include multiTextHide(2);
+      }
+    }
+  }
+}

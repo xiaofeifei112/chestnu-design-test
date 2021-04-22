@@ -1,3 +1,6 @@
+---
+title: 按钮
+---
 
 ## ButtonBox
 
@@ -24,23 +27,12 @@ export default () => {
     
     return (<ButtonBox
       btnFunction={btnFunction}
-      isDelete={true}
-      btnTxt={"删除按钮"}
+      btnTxt={"更新按钮"}
+      styleName={"uploadBtn"}
     />)
 }
 
 ```
 
-> 参数
-
-| 参数 | 类型 | 描述 | 
-| ---- | ---- | ----|
-| children | JSX.Element or string | 子元素 |
-| btnFunction | (event) => void or undefined | 点击事件 |
-| btnTxt | JSX.Element or string | 按钮内元素 |
-| styleName | string | 自定义样式类名 |
-| isDelete | boolean | 删除按钮 |
-| isCancel | boolean | 取消按钮 |
-| btnStyle | css or undefined  | 自定义样式 |
-| afterIcon | JSX.Element | 按钮图标 |
+<API src="./index.tsx"></API>
 

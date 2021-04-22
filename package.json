@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "chestnut-design",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -44,9 +44,10 @@
     "prettier": "^1.19.1",
     "yorkie": "^2.0.0"
   },
-  "registry": {
-    "publishConfig": {
-      "registry": "https://your-publish-registry"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaofeifei112/chestnu-design-test.git",
+    "branch": "master",
+    "platform": "github"
   }
 }

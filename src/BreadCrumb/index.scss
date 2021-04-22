@@ -1,0 +1,54 @@
+@import "./src/styles/public.scss";
+
+// 面包屑
+.lzc-breadcrumb {
+  @include fontSize(13, 400);
+  color: #B9BCC5;
+  height: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .back {
+    margin-right: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $click-blue2;
+      .icon-back {
+        color: $click-blue2;
+      }
+    }
+
+    .icon-back {
+      @include iconfontSize(10);
+    }
+  }
+
+  .bread {
+    color: #5E6576;
+
+    .bread-back {
+      color: #B9BCC5;
+    }
+
+    .bread-back:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      color: #5E6576;
+    }
+
+    .slash {
+      color: #B9BCC5;
+      &:last-child{
+        display: none;
+      }
+      &:nth-last-child(3){
+        color: #5E6576;
+      }
+    }
+  }
+}
