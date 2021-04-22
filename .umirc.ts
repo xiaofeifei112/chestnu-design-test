@@ -5,6 +5,7 @@ export default defineConfig({
   favicon: 'https://www.gemii.cc/imagesV3/gemiilogo.png',
   logo: 'https://www.gemii.cc/imagesV3/gemiilogo.png',
   outputPath: 'docs-dist',
+  publicPath: './',
   "sass": {
     prependData: "@import './src/styles/public.scss';"
   }
