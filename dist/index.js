@@ -3,6 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
+var videoReact = require('video-react');
+require('video-react/dist/video-react.css');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -352,7 +354,78 @@ const Carousel = ({
 
 var index$3 = React.memo(Carousel);
 
+var css_248z$6 = ".carousel-video .video-react .video-react-big-play-button {\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.carousel-video {\n  background: rgba(39, 46, 66, 0.5);\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 999;\n}\n.carousel-video .leftArrow, .carousel-video .rightArrow {\n  width: 36px;\n  height: 36px;\n  cursor: pointer;\n  font-size: 36px;\n  line-height: 36px;\n}\n.carousel-video .leftArrow:hover,\n.carousel-video .rightArrow:hover {\n  color: #4173FF;\n}\n.carousel-video .carousel-video-box {\n  width: 800px;\n  height: 642px;\n  margin: 0 25px;\n  position: relative;\n}\n.carousel-video .close-btn {\n  font-size: 36px;\n  line-height: 36px;\n  position: absolute;\n  right: -40px;\n  top: -30px;\n  z-index: 2;\n  cursor: pointer;\n}\n.carousel-video .showImg-box {\n  width: 800px;\n  height: 642px;\n  overflow: hidden;\n}\n.carousel-video .showImg-box .imgArr-box {\n  position: relative;\n  transition: all 0.2s ease-out;\n  top: 0;\n}\n.carousel-video .showImg-box .imgArr-box li {\n  width: 800px;\n  height: 642px;\n  float: left;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center;\n}";
+styleInject(css_248z$6);
+
+const CarouselVideo = ({
+  dataArr,
+  closeModal
+}) => {
+  // 左边距
+  const _useState = React.useState(0),
+        _useState2 = _slicedToArray(_useState, 2),
+        left = _useState2[0],
+        setLeft = _useState2[1]; // 最大左边距
+
+
+  const maxLeft = (dataArr.length - 1) * -800; // 当前下标
+
+  const _useState3 = React.useState(0),
+        _useState4 = _slicedToArray(_useState3, 2),
+        activeIndex = _useState4[0],
+        setActiveIndex = _useState4[1]; // 移动
+
+
+  const changeLeft = flag => {
+    if (flag === 'right' && left > maxLeft) {
+      setLeft(left - 800);
+      setActiveIndex(activeIndex + 1);
+    } else if (flag === 'left' && left < 0) {
+      setLeft(left + 800);
+      setActiveIndex(activeIndex - 1);
+    }
+  };
+
+  return React__default['default'].createElement("div", {
+    className: css_248z$6['carousel-video']
+  }, dataArr.length > 1 && React__default['default'].createElement("em", {
+    className: `${css_248z$6.leftArrow} iconfont icon_backpage_d ${left >= 0 ? 'none' : ''}`,
+    onClick: () => {
+      changeLeft('left');
+    }
+  }), React__default['default'].createElement("div", {
+    className: css_248z$6['carousel-video-box']
+  }, React__default['default'].createElement("em", {
+    className: `${css_248z$6['close-btn']} iconfont icon_close`,
+    onClick: closeModal
+  }), React__default['default'].createElement("div", {
+    className: css_248z$6['showImg-box']
+  }, React__default['default'].createElement("ul", {
+    className: css_248z$6['imgArr-box'],
+    style: {
+      left: left,
+      width: `${dataArr.length * 800}px`
+    }
+  }, dataArr.map((value, i) => React__default['default'].createElement("li", {
+    key: i
+  }, " ", activeIndex === i && React__default['default'].createElement(videoReact.Player, {
+    width: '100%',
+    height: '100%',
+    fluid: false,
+    autoPlay: true,
+    poster: value.poster
+  }, React__default['default'].createElement("source", {
+    src: dataArr[activeIndex].url
+  })), " "))))), dataArr.length > 1 && React__default['default'].createElement("em", {
+    onClick: () => changeLeft('right'),
+    className: `${css_248z$6["rightArrow"]} iconfont icon_nextpage_d ${left <= maxLeft ? 'none' : ''}`
+  }));
+};
+
+var index$4 = React.memo(CarouselVideo);
+
 exports.AvatarGroup = index$1;
 exports.BreadCrumb = index$2;
 exports.ButtonBox = index;
 exports.Carousel = index$3;
+exports.CarouselVideo = index$4;

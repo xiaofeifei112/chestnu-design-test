@@ -1,4 +1,6 @@
 import React, { memo, Fragment, useState } from 'react';
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -357,4 +359,78 @@ var Carousel = function Carousel(_ref) {
 
 var index$3 = /*#__PURE__*/memo(Carousel);
 
-export { index$1 as AvatarGroup, index$2 as BreadCrumb, index as ButtonBox, index$3 as Carousel };
+var css_248z$6 = ".carousel-video .video-react .video-react-big-play-button {\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.carousel-video {\n  background: rgba(39, 46, 66, 0.5);\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 999;\n}\n.carousel-video .leftArrow, .carousel-video .rightArrow {\n  width: 36px;\n  height: 36px;\n  cursor: pointer;\n  font-size: 36px;\n  line-height: 36px;\n}\n.carousel-video .leftArrow:hover,\n.carousel-video .rightArrow:hover {\n  color: #4173FF;\n}\n.carousel-video .carousel-video-box {\n  width: 800px;\n  height: 642px;\n  margin: 0 25px;\n  position: relative;\n}\n.carousel-video .close-btn {\n  font-size: 36px;\n  line-height: 36px;\n  position: absolute;\n  right: -40px;\n  top: -30px;\n  z-index: 2;\n  cursor: pointer;\n}\n.carousel-video .showImg-box {\n  width: 800px;\n  height: 642px;\n  overflow: hidden;\n}\n.carousel-video .showImg-box .imgArr-box {\n  position: relative;\n  transition: all 0.2s ease-out;\n  top: 0;\n}\n.carousel-video .showImg-box .imgArr-box li {\n  width: 800px;\n  height: 642px;\n  float: left;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center;\n}";
+styleInject(css_248z$6);
+
+var CarouselVideo = function CarouselVideo(_ref) {
+  var dataArr = _ref.dataArr,
+      closeModal = _ref.closeModal;
+
+  // 左边距
+  var _useState = useState(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      left = _useState2[0],
+      setLeft = _useState2[1]; // 最大左边距
+
+
+  var maxLeft = (dataArr.length - 1) * -800; // 当前下标
+
+  var _useState3 = useState(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      activeIndex = _useState4[0],
+      setActiveIndex = _useState4[1]; // 移动
+
+
+  var changeLeft = function changeLeft(flag) {
+    if (flag === 'right' && left > maxLeft) {
+      setLeft(left - 800);
+      setActiveIndex(activeIndex + 1);
+    } else if (flag === 'left' && left < 0) {
+      setLeft(left + 800);
+      setActiveIndex(activeIndex - 1);
+    }
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: css_248z$6['carousel-video']
+  }, dataArr.length > 1 && /*#__PURE__*/React.createElement("em", {
+    className: "".concat(css_248z$6.leftArrow, " iconfont icon_backpage_d ").concat(left >= 0 ? 'none' : ''),
+    onClick: function onClick() {
+      changeLeft('left');
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: css_248z$6['carousel-video-box']
+  }, /*#__PURE__*/React.createElement("em", {
+    className: "".concat(css_248z$6['close-btn'], " iconfont icon_close"),
+    onClick: closeModal
+  }), /*#__PURE__*/React.createElement("div", {
+    className: css_248z$6['showImg-box']
+  }, /*#__PURE__*/React.createElement("ul", {
+    className: css_248z$6['imgArr-box'],
+    style: {
+      left: left,
+      width: "".concat(dataArr.length * 800, "px")
+    }
+  }, dataArr.map(function (value, i) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, " ", activeIndex === i && /*#__PURE__*/React.createElement(Player, {
+      width: '100%',
+      height: '100%',
+      fluid: false,
+      autoPlay: true,
+      poster: value.poster
+    }, /*#__PURE__*/React.createElement("source", {
+      src: dataArr[activeIndex].url
+    })), " ");
+  })))), dataArr.length > 1 && /*#__PURE__*/React.createElement("em", {
+    onClick: function onClick() {
+      return changeLeft('right');
+    },
+    className: "".concat(css_248z$6["rightArrow"], " iconfont icon_nextpage_d ").concat(left <= maxLeft ? 'none' : '')
+  }));
+};
+
+var index$4 = /*#__PURE__*/memo(CarouselVideo);
+
+export { index$1 as AvatarGroup, index$2 as BreadCrumb, index as ButtonBox, index$3 as Carousel, index$4 as CarouselVideo };

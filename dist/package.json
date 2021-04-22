@@ -1,6 +1,6 @@
 {
   "name": "chestnut-design",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "栗子组件库",
   "main": "index.js",
   "scripts": {

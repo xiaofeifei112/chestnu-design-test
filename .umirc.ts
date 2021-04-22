@@ -12,4 +12,5 @@ export default defineConfig({
     // prependData: "@import './src/styles/public.scss';"
   },
   base: dev ? "/" : "/chestnu-design-test/docs-dist/",
+  dynamicImport: {}
 });

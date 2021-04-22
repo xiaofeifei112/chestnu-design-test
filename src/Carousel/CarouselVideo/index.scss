@@ -1,0 +1,61 @@
+@import "./src/styles/public.scss";
+.carousel-video .video-react .video-react-big-play-button {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carousel-video {
+  background:rgba(39,46,66,0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  .leftArrow,.rightArrow {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    @include iconfontSize(36);
+  }
+
+  .leftArrow:hover,
+  .rightArrow:hover {
+    color:#4173FF;
+  }
+  .carousel-video-box {
+    width: 800px;
+    height: 642px;
+    margin: 0 25px;
+    position: relative;
+  }
+  .close-btn {
+    @include iconfontSize(36);
+    position: absolute;
+    right: -40px;
+    top: -30px;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .showImg-box {
+    width: 800px;
+    height: 642px;
+    overflow: hidden;
+    .imgArr-box {
+      position: relative;
+      transition: all .2s ease-out;
+      top: 0;
+      li {
+        width: 800px;
+        height: 642px;
+        float: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
