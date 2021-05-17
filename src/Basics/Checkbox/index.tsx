@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Checkbox, CheckboxOptionType } from "antd";
+import {CheckboxOptionType, Checkbox} from "antd";
 // @ts-ignore
 import styles from "./index.scss";
-
 
 type CheckBoxValue = boolean | string | number;
 

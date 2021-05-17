@@ -1,0 +1,53 @@
+@import "./src/styles/public.scss";
+
+.pageFooterCircle {
+  // padding-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 20px;
+
+  .ant-pagination-options {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .ant-pagination-options-size-changer.ant-select {
+    margin: 0;
+  }
+
+  .ant-select-selection {
+    border: 0 none;
+    @include fontSize(13, 400);
+    color: #5E6576;
+    box-shadow: none;
+  }
+
+  .ant-select-dropdown {
+    @include fontSize(13, 400);
+  }
+
+  .ant-select-dropdown-menu-item:hover {
+    background: $click-blue;
+  }
+
+  .ant-pagination-item-active {
+    background: $click-blue;
+    border-radius: 6px;
+    border: 0 none;
+  }
+
+  .ant-pagination-item-active a {
+    color: #FFF;
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    border: none;
+  }
+}
