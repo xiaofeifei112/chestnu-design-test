@@ -1,0 +1,120 @@
+@import "./src/styles/public.scss";
+
+.public_input_color {
+  width: 80px;
+  height: 32px;
+  border-radius:4px;
+  border:1px solid $txt-gray;
+  &::-webkit-color-swatch {
+    border: none;
+  }
+}
+
+// 新颜色组件
+.color-input-box {
+  @extend %flex_align_center;
+  .input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  .click-label {
+    cursor: pointer;
+    margin-right: 26px;
+    @extend %flex_align_center;
+    .icon_tiaose {
+      @include iconfontSize(20);
+      color: $click-blue;
+    }
+  }
+  .preset-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    padding: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    .content {
+      height: 100%;
+      border-radius: 2px;
+    }
+  }
+}
+
+.public_input_num {
+  border-radius: 4px;
+  border:1px solid $txt-gray;
+  &:hover {
+    border: 1px solid #4173FF;
+  }
+  &:focus {
+    border: 1px solid #4173FF;
+    box-shadow: none;
+  }
+  &.ant-input-number-disabled {
+    &:hover {
+      border: 1px solid $txt-gray;
+    }
+  }
+}
+
+.public-input {
+  display: flex;
+  align-items: center;
+  @include fontSize(15, 500);
+  color: $txt-black;
+
+  .label {
+    margin-right: 4px;
+  }
+
+  .input {
+    background: #FFFFFF;
+    border: 1px solid $txt-gray;
+    border-radius: 4px;
+    width: 300px;
+    height: 36px;
+    line-height: 34px;
+    text-indent: 12px;
+    @include fontSize(14);
+    color: $txt-black;
+
+    &.input_medium {
+        width: 240px;
+        height: 32px;
+        line-height: 30px;
+    }
+
+    &.input_small {
+        width: 160px;
+        height: 32px;
+        line-height: 30px;
+    }
+    &:hover {
+      border: 1px solid #4173FF;
+    }
+
+    &:focus {
+      border: 1px solid #4173FF;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #B9BCC5;
+    }
+
+    &.disabled {
+      background: #F7F8F9;
+      border: 1px solid $txt-gray;
+      color: #B9BCC5;
+      cursor: no-drop;
+
+      &:hover {
+        border: 1px solid $txt-gray;
+      }
+
+      &:focus {
+        border: 1px solid $txt-gray;
+      }
+    }
+  }
+}

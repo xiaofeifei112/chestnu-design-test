@@ -8,3 +8,4 @@ export {default as CarouselVideo} from "./Senior/CarouselVideo";
 export {default as ButtonBox} from "./Basics/ButtonBox";
 export {default as CheckBox, OneCheckbox} from "./Basics/Checkbox";
 export {default as CirclePageRule} from "./Senior/CirclePageRule";
+export {default as Input} from "./Basics/Input";
